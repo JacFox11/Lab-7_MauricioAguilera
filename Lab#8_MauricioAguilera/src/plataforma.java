@@ -282,7 +282,7 @@ public class plataforma extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false
@@ -297,9 +297,6 @@ public class plataforma extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(jt_cliente);
-        if (jt_cliente.getColumnModel().getColumnCount() > 0) {
-            jt_cliente.getColumnModel().getColumn(0).setHeaderValue("Cliente");
-        }
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(230, 120, 519, 121);
@@ -437,7 +434,7 @@ public class plataforma extends javax.swing.JFrame {
             clientes.add(new Cliente(nombre, edad, sexo, new Orden (entrada, sopa, fuerte, postre)));
             
             DefaultTableModel temp = (DefaultTableModel) jt_cliente.getModel();
-            Object[] temp2 = new Object[4];
+            Object[] temp2 = {nombre, entrada, sopa, fuerte, postre};
             temp2[0] = nombre;
             temp2[1] = entrada.getNombre();
             temp2[2] = sopa.getNombre();
@@ -459,7 +456,6 @@ public class plataforma extends javax.swing.JFrame {
         DefaultComboBoxModel cb2 = (DefaultComboBoxModel) cb_cliente_sopa.getModel();
         DefaultComboBoxModel cb3 = (DefaultComboBoxModel) cb_cliente_fuerte.getModel();
         DefaultComboBoxModel cb4 = (DefaultComboBoxModel) cb_cliente_postre.getModel();
-        ap.cargarArchivo();
         for (Platillo t : platillos) {
             if (t.getTipo().equals("entrada")){
                 cb1.addElement(t);
@@ -493,22 +489,25 @@ public class plataforma extends javax.swing.JFrame {
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
         // TODO add your handling code here:
-        platillos.add(new Platillo("Tortilla", 9, 0, new Date(), Color.red, "sopa"));
-        platillos.add(new Platillo("Res", 12, 0, new Date(), Color.black, "sopa"));
-        platillos.add(new Platillo("Pollo", 10, 0, new Date(), Color.yellow, "sopa"));
-        platillos.add(new Platillo("Capirotada", 7, 0, new Date(), Color.white, "sopa"));
-        platillos.add(new Platillo("Pollo con pure", 15, 0, new Date(), Color.black, "fuerte"));
-        platillos.add(new Platillo("Espaguetis", 13, 0, new Date(), Color.red, "fuerte"));
-        platillos.add(new Platillo("Hamburguesa", 11, 0, new Date(), Color.yellow, "fuerte"));
-        platillos.add(new Platillo("Salmon", 18, 0, new Date(), Color.pink, "fuerte"));
-        platillos.add(new Platillo("Cordero", 16, 0, new Date(), Color.white, "fuerte"));
-        platillos.add(new Platillo("Pie de Limon", 7, 0, new Date(), Color.green, "postre"));
-        platillos.add(new Platillo("Cheesecake", 8, 0, new Date(), Color.red, "postre"));
-        platillos.add(new Platillo("Tarimasu", 9, 0, new Date(), Color.black, "postre"));
-        platillos.add(new Platillo("Crepa", 6, 0, new Date(), Color.yellow, "postre"));
-        platillos.add(new Platillo("Anafre Parisiense", 5, 0, new Date(), Color.black, "entrada"));
-        platillos.add(new Platillo("Empanada", 7, 0, new Date(), Color.red, "entrada"));
-        platillos.add(new Platillo("Huevos Rellenos", 3, 0, new Date(), Color.white, "entrada"));
+        if (c==0){
+            platillos.add(new Platillo("Tortilla", 9, 0, new Date(), Color.red, "sopa"));
+            platillos.add(new Platillo("Res", 12, 0, new Date(), Color.black, "sopa"));
+            platillos.add(new Platillo("Pollo", 10, 0, new Date(), Color.yellow, "sopa"));
+            platillos.add(new Platillo("Capirotada", 7, 0, new Date(), Color.white, "sopa"));
+            platillos.add(new Platillo("Pollo con pure", 15, 0, new Date(), Color.black, "fuerte"));
+            platillos.add(new Platillo("Espaguetis", 13, 0, new Date(), Color.red, "fuerte"));
+            platillos.add(new Platillo("Hamburguesa", 11, 0, new Date(), Color.yellow, "fuerte"));
+            platillos.add(new Platillo("Salmon", 18, 0, new Date(), Color.pink, "fuerte"));
+            platillos.add(new Platillo("Cordero", 16, 0, new Date(), Color.white, "fuerte"));
+            platillos.add(new Platillo("Pie de Limon", 7, 0, new Date(), Color.green, "postre"));
+            platillos.add(new Platillo("Cheesecake", 8, 0, new Date(), Color.red, "postre"));
+            platillos.add(new Platillo("Tarimasu", 9, 0, new Date(), Color.black, "postre"));
+            platillos.add(new Platillo("Crepa", 6, 0, new Date(), Color.yellow, "postre"));
+            platillos.add(new Platillo("Anafre Parisiense", 5, 0, new Date(), Color.black, "entrada"));
+            platillos.add(new Platillo("Empanada", 7, 0, new Date(), Color.red, "entrada"));
+            platillos.add(new Platillo("Huevos Rellenos", 3, 0, new Date(), Color.white, "entrada"));
+            c++;
+        }
         
     }//GEN-LAST:event_jButton4MouseClicked
 
@@ -549,8 +548,7 @@ public class plataforma extends javax.swing.JFrame {
 
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
         // TODO add your handling code here:
-        jt_chef.remove(jt_cliente.getSelectedRow());
-        chefs.remove(jt_cliente.getSelectedRow());
+        
     }//GEN-LAST:event_jButton5MouseClicked
 
     /**
@@ -638,4 +636,5 @@ public class plataforma extends javax.swing.JFrame {
 ArrayList <Platillo> platillos = new ArrayList();
 ArrayList <Cliente> clientes = new ArrayList();
 ArrayList <Chef> chefs = new ArrayList();
+int c=0;
 }
