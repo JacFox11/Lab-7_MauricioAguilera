@@ -55,10 +55,18 @@ public class plataforma extends javax.swing.JFrame {
         cb_cliente_postre = new javax.swing.JComboBox<>();
         jButton10 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
-        cb_cliente_entrada1 = new javax.swing.JComboBox<>();
-        jd_nuevoplatillo = new javax.swing.JDialog();
-        jd_nuevochef = new javax.swing.JDialog();
+        cb_cliente_chef = new javax.swing.JComboBox<>();
         buttonGroup1 = new javax.swing.ButtonGroup();
+        jd_nuevochef = new javax.swing.JDialog();
+        jLabel13 = new javax.swing.JLabel();
+        tf_nombrechef = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        sp_edadchef = new javax.swing.JSpinner();
+        jLabel15 = new javax.swing.JLabel();
+        rb_mchef = new javax.swing.JRadioButton();
+        rb_fchef = new javax.swing.JRadioButton();
+        jButton11 = new javax.swing.JButton();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jScrollPane1 = new javax.swing.JScrollPane();
         jt_cliente = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
@@ -73,6 +81,7 @@ public class plataforma extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
 
         jLabel4.setText("Nombre");
 
@@ -81,7 +90,6 @@ public class plataforma extends javax.swing.JFrame {
         jLabel6.setText("Sexo");
 
         buttonGroup1.add(rb_mcliente);
-        rb_mcliente.setSelected(true);
         rb_mcliente.setText("M");
 
         buttonGroup1.add(rb_fcliente);
@@ -121,7 +129,6 @@ public class plataforma extends javax.swing.JFrame {
                                         .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addComponent(jLabel6))
-                                .addGap(18, 18, 18)
                                 .addGroup(jd_nuevoclienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jd_nuevoclienteLayout.createSequentialGroup()
                                         .addGap(25, 25, 25)
@@ -147,7 +154,7 @@ public class plataforma extends javax.swing.JFrame {
                                         .addGap(72, 72, 72)
                                         .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(39, 39, 39)
-                                        .addComponent(cb_cliente_entrada1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(cb_cliente_chef, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jd_nuevoclienteLayout.createSequentialGroup()
                                 .addGap(80, 80, 80)
                                 .addComponent(cb_cliente_sopa, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -160,12 +167,13 @@ public class plataforma extends javax.swing.JFrame {
             jd_nuevoclienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_nuevoclienteLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addGroup(jd_nuevoclienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(tf_nombrecliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jd_nuevoclienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jd_nuevoclienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel11)
-                        .addComponent(cb_cliente_entrada1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(cb_cliente_chef, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jd_nuevoclienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel4)
+                        .addComponent(tf_nombrecliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(27, 27, 27)
                 .addGroup(jd_nuevoclienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -192,26 +200,72 @@ public class plataforma extends javax.swing.JFrame {
                 .addGap(29, 29, 29))
         );
 
-        javax.swing.GroupLayout jd_nuevoplatilloLayout = new javax.swing.GroupLayout(jd_nuevoplatillo.getContentPane());
-        jd_nuevoplatillo.getContentPane().setLayout(jd_nuevoplatilloLayout);
-        jd_nuevoplatilloLayout.setHorizontalGroup(
-            jd_nuevoplatilloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jd_nuevoplatilloLayout.setVerticalGroup(
-            jd_nuevoplatilloLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jLabel13.setText("Nombre");
+
+        jLabel14.setText("Edad");
+
+        jLabel15.setText("Sexo");
+
+        buttonGroup2.add(rb_mchef);
+        rb_mchef.setSelected(true);
+        rb_mchef.setText("M");
+
+        buttonGroup2.add(rb_fchef);
+        rb_fchef.setText("F");
+
+        jButton11.setText("Guardar");
+        jButton11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton11MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jd_nuevochefLayout = new javax.swing.GroupLayout(jd_nuevochef.getContentPane());
         jd_nuevochef.getContentPane().setLayout(jd_nuevochefLayout);
         jd_nuevochefLayout.setHorizontalGroup(
             jd_nuevochefLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(jd_nuevochefLayout.createSequentialGroup()
+                .addGroup(jd_nuevochefLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_nuevochefLayout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addGroup(jd_nuevochefLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel15))
+                        .addGap(28, 28, 28)
+                        .addGroup(jd_nuevochefLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_nuevochefLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(tf_nombrechef, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(rb_mchef))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_nuevochefLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jd_nuevochefLayout.createSequentialGroup()
+                                    .addGap(10, 10, 10)
+                                    .addComponent(rb_fchef))
+                                .addComponent(sp_edadchef, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jd_nuevochefLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         jd_nuevochefLayout.setVerticalGroup(
             jd_nuevochefLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(jd_nuevochefLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(jd_nuevochefLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(tf_nombrechef, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(jd_nuevochefLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(sp_edadchef, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addGroup(jd_nuevochefLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rb_mchef)
+                    .addComponent(rb_fchef)
+                    .addComponent(jLabel15))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 80, Short.MAX_VALUE)
+                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -330,13 +384,28 @@ public class plataforma extends javax.swing.JFrame {
 
         jButton5.setBackground(new java.awt.Color(153, 0, 0));
         jButton5.setText("Despedir Chef");
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
         getContentPane().add(jButton5);
         jButton5.setBounds(30, 380, 110, 23);
 
         jButton8.setBackground(new java.awt.Color(153, 0, 0));
         jButton8.setText("Contratar Chef");
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton8MouseClicked(evt);
+            }
+        });
         getContentPane().add(jButton8);
         jButton8.setBounds(30, 340, 110, 23);
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
+        jLabel12.setText("(Presionar para cargar platillos)");
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(30, 250, 120, 10);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -376,6 +445,9 @@ public class plataforma extends javax.swing.JFrame {
             temp2[4] = postre.getNombre();
             temp.addRow(temp2);
             jt_cliente.setModel(temp);
+            
+            jd_nuevocliente.setVisible(false);
+            jd_nuevocliente.setModal(false);
         } catch (Exception e) {
         }
         
@@ -406,6 +478,13 @@ public class plataforma extends javax.swing.JFrame {
             cb_cliente_fuerte.setModel(cb3);
             cb_cliente_postre.setModel(cb4);
         }
+        
+        DefaultComboBoxModel cb5 = (DefaultComboBoxModel) cb_cliente_chef.getModel();
+        for (Chef t : chefs) {
+            cb5.addElement(t);
+        }
+        cb_cliente_chef.setModel(cb5);
+        
         jd_nuevocliente.setModal(true);
         jd_nuevocliente.pack();
         jd_nuevocliente.setLocationRelativeTo(this);
@@ -414,7 +493,6 @@ public class plataforma extends javax.swing.JFrame {
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
         // TODO add your handling code here:
-        ap.cargarArchivo();
         platillos.add(new Platillo("Tortilla", 9, 0, new Date(), Color.red, "sopa"));
         platillos.add(new Platillo("Res", 12, 0, new Date(), Color.black, "sopa"));
         platillos.add(new Platillo("Pollo", 10, 0, new Date(), Color.yellow, "sopa"));
@@ -431,15 +509,49 @@ public class plataforma extends javax.swing.JFrame {
         platillos.add(new Platillo("Anafre Parisiense", 5, 0, new Date(), Color.black, "entrada"));
         platillos.add(new Platillo("Empanada", 7, 0, new Date(), Color.red, "entrada"));
         platillos.add(new Platillo("Huevos Rellenos", 3, 0, new Date(), Color.white, "entrada"));
-        ap.escribirArchivo();
         
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         // TODO add your handling code here:
         jt_cliente.remove(jt_cliente.getSelectedRow());
-        
+        clientes.remove(jt_cliente.getSelectedRow());
     }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
+        // TODO add your handling code here:
+        jd_nuevochef.setModal(true);
+        jd_nuevochef.pack();
+        jd_nuevochef.setLocationRelativeTo(this);
+        jd_nuevochef.setVisible(true);
+    }//GEN-LAST:event_jButton8MouseClicked
+
+    private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
+        // TODO add your handling code here:
+        try {
+            String nombre;
+            int edad;
+            String sexo="";
+            nombre = tf_nombrechef.getText();
+            edad = (Integer) sp_edadchef.getValue();
+            if (rb_mchef.isSelected()){
+                sexo="M";
+            }
+            else{
+                sexo ="F";
+            }
+            chefs.add(new Chef(nombre, edad, sexo));
+        } catch (Exception e) {
+        }
+        jd_nuevochef.setVisible(false);
+        jd_nuevochef.setModal(false);
+    }//GEN-LAST:event_jButton11MouseClicked
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+        jt_chef.remove(jt_cliente.getSelectedRow());
+        chef.remove(jt_cliente.getSelectedRow());
+    }//GEN-LAST:event_jButton5MouseClicked
 
     /**
      * @param args the command line arguments
@@ -478,13 +590,15 @@ public class plataforma extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JComboBox<String> cb_cliente_chef;
     private javax.swing.JComboBox<String> cb_cliente_entrada;
-    private javax.swing.JComboBox<String> cb_cliente_entrada1;
     private javax.swing.JComboBox<String> cb_cliente_fuerte;
     private javax.swing.JComboBox<String> cb_cliente_postre;
     private javax.swing.JComboBox<String> cb_cliente_sopa;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -493,6 +607,10 @@ public class plataforma extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -506,14 +624,18 @@ public class plataforma extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JDialog jd_nuevochef;
     private javax.swing.JDialog jd_nuevocliente;
-    private javax.swing.JDialog jd_nuevoplatillo;
     private javax.swing.JTable jt_chef;
     private javax.swing.JTable jt_cliente;
+    private javax.swing.JRadioButton rb_fchef;
     private javax.swing.JRadioButton rb_fcliente;
+    private javax.swing.JRadioButton rb_mchef;
     private javax.swing.JRadioButton rb_mcliente;
+    private javax.swing.JSpinner sp_edadchef;
     private javax.swing.JSpinner sp_edadcliente;
+    private javax.swing.JTextField tf_nombrechef;
     private javax.swing.JTextField tf_nombrecliente;
     // End of variables declaration//GEN-END:variables
 ArrayList <Platillo> platillos = new ArrayList();
 ArrayList <Cliente> clientes = new ArrayList();
+ArrayList <Chef> chefs = new ArrayList();
 }
