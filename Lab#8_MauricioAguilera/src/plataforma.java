@@ -18,8 +18,6 @@ import javax.swing.table.DefaultTableModel;
  * @author Mauricio Aguilera
  */
 public class plataforma extends javax.swing.JFrame {
-    AdminClientes ac = new AdminClientes("./Clientes.cl");
-    AdminPlatillo ap = new AdminPlatillo("./Platillos.pl");
     /**
      * Creates new form plataforma
      */
