@@ -550,7 +550,7 @@ public class plataforma extends javax.swing.JFrame {
     private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
         // TODO add your handling code here:
         jt_chef.remove(jt_cliente.getSelectedRow());
-        chef.remove(jt_cliente.getSelectedRow());
+        chefs.remove(jt_cliente.getSelectedRow());
     }//GEN-LAST:event_jButton5MouseClicked
 
     /**
